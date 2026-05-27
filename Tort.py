@@ -23,7 +23,7 @@ sword = pygame.image.load("Mõõk.png").convert_alpha()
 sword = pygame.transform.scale(sword, (100, 100))
 
 # Font
-font = pygame.font.SysFont("comicsansms", 30)
+font = pygame.font.SysFont("Comic Sans MS", 12, bold=True)
 
 def draw_curved_text(surface, text, center, radius):
     for i, char in enumerate(text):
@@ -31,7 +31,7 @@ def draw_curved_text(surface, text, center, radius):
         x = center[0] + radius * math.cos(angle)
         y = center[1] + radius * math.sin(angle)
 
-        char_surf = font.render(char, True, (255, 255, 255))
+        char_surf = font.render(char, True, (0, 102, 51))
         rect = char_surf.get_rect(center=(x, y))
         surface.blit(char_surf, rect)
 
@@ -43,10 +43,10 @@ while running:
     screen.blit(background, (0, 0))
 
     # Logo
-    screen.blit(logo, (0, 0))
+    screen.blit(logo, (10, 10))
 
     # Kaarega tekst logo ümber
-    draw_curved_text(screen, "TULEVIK 2050", (80, 80), 70)
+    draw_curved_text(screen, "TULEVIK 2050", (210, 33), 23)
 
     # Tort laual
     screen.blit(cake, (340, 310))
